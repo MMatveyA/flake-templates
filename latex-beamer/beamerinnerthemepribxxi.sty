@@ -1,0 +1,79 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerinnerthemepribxxi}[2023/10/01 The MyTheme inner beamer theme]
+
+\setbeamertemplate{caption}[numbered]
+
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamertemplate{items}[square]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Blocks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Itemize
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{enumerate items}[default]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define the title page template
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\defbeamertemplate{title}{pribxxi}[1][]{%
+	\begin{beamercolorbox}[sep=8pt,center,#1]{title}
+		\usebeamerfont{title}\inserttitle\par%
+		\ifx\insertsubtitle\@empty%
+		\else%
+			\vskip0.25em%
+			{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+		\fi%
+	\end{beamercolorbox}%
+}
+
+\defbeamertemplate{author}{pribxxi}[1][]{%
+	\begin{beamercolorbox}[sep=8pt,center,#1]{author}
+		\usebeamerfont{author}\insertauthor
+	\end{beamercolorbox}
+}
+
+\defbeamertemplate{institute}{pribxxi}[1][]{%
+	\begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+		\usebeamerfont{institute}\insertinstitute
+	\end{beamercolorbox}
+}
+
+\defbeamertemplate{date}{pribxxi}[1][]{%
+	\begin{beamercolorbox}[sep=8pt,center,#1]{date}
+		\usebeamerfont{date}\insertdate
+	\end{beamercolorbox}
+}
+
+\defbeamertemplate{titlegraphic}{pribxxi}{%
+	{\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+}
+
+\defbeamertemplate*{title page}{pribxxi}[1][]
+{
+	\vbox{}
+	\vfill
+	\begingroup
+	\centering
+	\usebeamertemplate{titlegraphic}
+	\vskip0.5em\par
+	\usebeamertemplate{title}
+	\vskip1em\par
+	\usebeamertemplate{author}
+	\usebeamertemplate{institute}
+	\usebeamertemplate{date}
+	\endgroup
+	\vfill
+}[action]{
+	\setbeamertemplate{title}[pribxxi][#1]
+	\setbeamertemplate{author}[pribxxi][#1]
+	\setbeamertemplate{institute}[pribxxi][#1]
+	\setbeamertemplate{date}[pribxxi][#1]
+	\setbeamertemplate{titlegraphic}[pribxxi]
+}
+
+\mode<all>

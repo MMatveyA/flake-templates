@@ -1,0 +1,45 @@
+\documentclass[169, pdf]{beamer}
+
+%==============================================================================
+% Настройки Beamer
+%==============================================================================
+\mode<presentation>{}
+\setbeameroption{show notes on second screen}
+\usetheme{PribXXI}
+
+%==============================================================================
+% Языковые настройки
+%==============================================================================
+\usepackage{fontspec}
+\setmainfont{LiberationSerif}
+\setsansfont{LiberationSans}
+\setmonofont{LiberationMono}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguages{english}
+\usepackage{csquotes}
+
+%==============================================================================
+% Дополнительные пакеты
+%==============================================================================
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+%==============================================================================
+% Титульный слайд
+%==============================================================================
+% WARNING: EDIT HERE
+\titlegraphic{
+	\begin{scriptsize}
+    Title graphic
+  \end{scriptsize}
+}
+\title{Title}
+\subtitle{Subtitle}
+\author{Author}
+\date{Date}
+\institute[short name]{Full name}
+
+\begin{document}
+\frame{\titlepage}
+\end{document}
